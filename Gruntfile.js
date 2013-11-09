@@ -19,6 +19,18 @@ module.exports = function (grunt) {
             app: 'app',
             dist: 'dist'
         },
+        'gh-pages': {
+            options: {
+                base: '<%= yeoman.dist %>'
+            },
+            'heroku' : {
+                options: {
+                    branch: 'heroku',
+                    push: false
+                },
+                src: '**/*'
+            }
+        },
         watch: {
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
